@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+html{
+    color: #24305f;
+}
+
+body{
+    background: rgb(239, 244, 247);
+}
+
+.accordian{
+    width: 70%;
+    margin: 200px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.item{
+    box-shadow: 0 0 30px 0 rgba(0,0,0,0.1);
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 30px;
+    align-items: center;
+    padding: 30px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #fff;
+}
+h2{
+    font-style: 24px;
+    text-transform: capitalize;
+}
+
+.number{
+    font-size: 25px;
+}
+
+.icon{
+    width: 24px;
+    height: 24px;
+    color: #1864ab;
+}
+
+.hidden-box{
+    grid-column: 2/3;
+    display: none;
+}
+
+.hidden-box p{
+    line-height: 1.6rem;
+    margin-bottom: 24px;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    word-spacing: 3px;
+}
+
+.hidden-box ul{
+    display: flex;
+    flex-direction: column;
+}
+
+.hidden-box ul li{
+    margin-left: 16px;
+    line-height: 1.5rem;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    word-spacing: 1px;
+}
+
+
+.active{
+    position: relative;
+}
+
+.active::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-top: 1px solid #1864ab;
+    animation: borderline 1s linear forwards;
+}
+
+@keyframes borderline{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 100%;
+    }
+}
+
+
+.active .hidden-box{
+    display: block;
+}
